@@ -9,7 +9,7 @@ MIN_NUM_GPU=${#gpus[@]}
 MAX_NUM_GPU=$MIN_NUM_GPU
 export CUDA_VISIBLE_DEVICES=$GPU_INDEX
 
-SCRIPT_DIR="$(pwd)/benchmarks/scripts/tf_cnn_benchmarks"
+SCRIPT_DIR="/home/${USER}/benchmarks/scripts/tf_cnn_benchmarks"
 
 CPU_NAME="$(lscpu | grep "Model name:" | sed -r 's/Model name:\s{1,}//g' | awk '{ print $4 }')";
 if [ $CPU_NAME = "CPU" ]; then
@@ -25,7 +25,7 @@ echo $CONFIG_NAME
 
 
 DATA_DIR="/home/${USER}/data/imagenet_mini"
-LOG_DIR="$(pwd)/${CONFIG_NAME}.logs"
+LOG_DIR="/home/${USER}/${CONFIG_NAME}.logs"
 
 NUM_BATCHES=100
 
